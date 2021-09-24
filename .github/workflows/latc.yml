@@ -8,11 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-
-    - name: Set up secret file
-      env:
-        site_config: ${GITHUB_WORKSPACE}/config.toml
-      run: |
-        echo $site_config
+    - run: 'echo "$${GITHUB_WORKSPACE}/config.toml" > key'
+      shell: bash
