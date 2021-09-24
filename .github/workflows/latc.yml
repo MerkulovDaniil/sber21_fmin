@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: 'echo "$${GITHUB_WORKSPACE}/config.toml" > key'
+    - run: 'echo "${{ secrets.SITE_CONFIG }}'
       shell: bash
