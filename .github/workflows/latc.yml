@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: 'echo "${{ secrets.SITE_CONFIG }}"'
+    - run: 'echo ${{ secrets.SITE_CONFIG }}'
       shell: bash
