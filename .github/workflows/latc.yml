@@ -8,5 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: 'echo ${{ secrets.SITE_CONFIG }}'
-      shell: bash
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        CONFIGO: ${{ secrets.SITE_CONFIG }}
+      run: |
+        echo $CONFIGO >> secrets.txt
+
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
