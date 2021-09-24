@@ -1,0 +1,18 @@
+name: Show Me the configs
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        site_config: ${GITHUB_WORKSPACE}/config.toml
+      run: |
+        echo $site_config
